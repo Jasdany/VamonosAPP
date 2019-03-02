@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default CustomDrawerContentComponent;
+export default CustomDrawerContentComponent;    
