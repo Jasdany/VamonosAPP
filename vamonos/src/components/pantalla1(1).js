@@ -4,7 +4,7 @@ import{
     Text
 } from 'react-native'
 
-const Pantalla1 =()=>{
+const Favoritos =()=>{
     return(
         <View>
             <Text>
@@ -14,4 +14,4 @@ const Pantalla1 =()=>{
     )    
 }
 
-export default Pantalla1;
+export default Favoritos;

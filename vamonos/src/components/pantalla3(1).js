@@ -4,14 +4,14 @@ import{
     Text
 } from 'react-native'
 
-const Pantalla3 =()=>{
+const Atractivos =()=>{
     return(
         <View>
             <Text>
-                Esta es la pantalla numero 3
+                Atractivos Turisticos
             </Text>
         </View>
     )
 }
 
-export default Pantalla3;
+export default Atractivo;

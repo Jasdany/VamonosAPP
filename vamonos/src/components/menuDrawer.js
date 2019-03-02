@@ -4,9 +4,9 @@ import {
     createStackNavigator
 } from 'react-navigation'
 
-import Pantalla1 from './pantalla1';
-import Pantalla2 from './pantalla2';
-import Pantalla3 from './pantalla3';
+import Favoritos from './Favoritos';
+import Mapa from './Mapa';
+import Atractivos from './Atractivos';
 
 import {
     Image,

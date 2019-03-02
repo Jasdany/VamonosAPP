@@ -4,11 +4,11 @@ import{
     Text
 } from 'react-native'
 
-const Pantalla1 =()=>{
+const Favoritos =()=>{
     return(
         <View>
             <Text>
-                Esta es la pantalla numero 1
+             Favoritos
             </Text>
         </View>
     )    
