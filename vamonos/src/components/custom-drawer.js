@@ -17,7 +17,7 @@ const CustomDrawerContentComponent = (props) => (
                 style={styles.header}
             >
                 <Image
-                    source={require('../image/react.png')}
+                    source={require('../image/logo.jpg')}
                     style={styles.headerImage}
                 />
             </View>
@@ -38,9 +38,9 @@ const styles = StyleSheet.create({
         marginBottom: 1,
     },
     headerImage: {
-        width: 150,
+        width: 400,
         height: 150,
     },
 });
 
-export default CustomDrawerContentComponent;    
+export default CustomDrawerContentComponent;

@@ -4,14 +4,14 @@ import{
     Text
 } from 'react-native'
 
-const Mapa =()=>{
+const Pantalla2 =()=>{
     return(
         <View>
             <Text>
-                Mapa
+                Esta es la pantalla numero 2
             </Text>
         </View>
     )
 }
 
-export default Mapa;
+export default Pantalla2;

@@ -4,14 +4,14 @@ import{
     Text
 } from 'react-native'
 
-const Favoritos =()=>{
+const Inicio =()=>{
     return(
         <View>
             <Text>
-             Favoritos
+                Prueba de menu
             </Text>
         </View>
-    )    
+    )
 }
 
-export default Pantalla1;
+export default Inicio;

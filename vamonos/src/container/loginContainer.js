@@ -29,13 +29,13 @@ class LoginContainer extends Component {
 
     miEventoDeBotonIniciarSession = () => {
         const { usuario, pass } = this.state;
-        if(usuario === "Prueba" && pass === "123") {
+        if(usuario === "0" && pass === "0") {
             this.setState({
                 logged: true,
             });
         }
         else {
-            Alert.alert("Mi Mensaje", "Usuario o contraseña incorrecto");
+            Alert.alert("INICIO ERRONEO", "Usuario o contraseña incorrecto");
         }
     }
 

@@ -21,26 +21,21 @@ const LoginApp = (props) => {
 
     return (
      <View style={styles.fon}>
-         <Image style={styles.img} source={require('../image/x.png')}/>
+         <Image style={styles.img} source={require('../image/star.png')}/>
         <View style={styles.fondo}>
-            <Text style={styles.text1}>
-                Usuario
-            </Text>
             <View style = {styles.text}>
                 <TextInput
                     onChangeText={miOnChangeDeUSuario}
                     value={nombreUsuario}
+                    placeholder="Correo"
                 />
             </View>
-
-            <Text style={styles.text2}>
-                Contraseña
-            </Text>
 
             <View style = {styles.text}>
                 <TextInput
                     onChangeText={miOnChangeDePassword}
                     value={contrasenaUsuario}
+                    placeholder="Contraseña"
                 />
             </View>
             <View style={styles.recuperacion}>
@@ -52,14 +47,14 @@ const LoginApp = (props) => {
                 <View style = {styles.margin}>
                     <Button
                         title={'Entrar'}
-                        color='#055610'
+                        color='blue'
                         onPress={miOnPressDeIniciarSesion}
                     />
                 </View>
                 <View style = {styles.margin}>
                     <Button
                         title={'Registrarse'}
-                        color='#055610'
+                        color='blue'
                         onPress={miOnPressDeIniciarSesion}
                     />
                 </View>
@@ -85,40 +80,43 @@ const styles = StyleSheet.create({
 
     img:{
         marginTop: 0,
-        marginLeft: 20,
-        marginRight: 50,
+        marginLeft: 10,
+        marginRight: 0,
         borderRadius: 15
     },
 
     fon:{
-        backgroundColor: '#1707DF',
+
+        backgroundColor: 'white',
         height: '100%',
         justifyContent: 'center',
     },
     fondo: {
-        backgroundColor: '#13D1B1',
-        marginTop: 20,
-        marginLeft: 30,
+
+        marginTop: -20,
+        marginLeft: 32,
         marginRight: 30,
         justifyContent: 'center',
-        borderRadius: 15,
-        padding: 20,
+        borderRadius: 20,
+        padding: 14,
     },
 
     margin:{
-        marginTop: 10,
+        marginTop: 8,
         flex: 1,
         margin: 2,
         borderRadius: 100
     },
     text:{
-        marginTop: 5,
-        backgroundColor: '#0883AD',
+        marginTop: 15,
+        backgroundColor: 'transparent',
         marginLeft: 10,
         marginRight: 10,
-        borderRadius: 10,
+        borderColor: 'blue',
+        borderWidth: 1,
+        borderRadius: 50,
         fontSize: 30,
-        height: 40,
+        height: 40
     },
     text1:{
         fontSize: 20,
