@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "613136822837",
+    "firebase_url": "https://vamonos-d1da1.firebaseio.com",
+    "project_id": "vamonos-d1da1",
+    "storage_bucket": "vamonos-d1da1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613136822837:android:bf86c93d4a231344",
+        "android_client_info": {
+          "package_name": "com.vamonos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613136822837-vce5acm8phgrg823q78mpt5j7fe7d3kn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vamonos",
+            "certificate_hash": "3217a826168a36e908bc4e3666ab261087c33a6c"
+          }
+        },
+        {
+          "client_id": "613136822837-6oo29iqicap5hvqtk9vhg711kk7u2skp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDorGl_ztoMK-Bm0EJBXgS1uMZCSdxGhE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613136822837-6oo29iqicap5hvqtk9vhg711kk7u2skp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
