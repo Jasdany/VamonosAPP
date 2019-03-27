@@ -4,7 +4,7 @@ import {
     createStackNavigator
 } from 'react-navigation'
 
-import inicio from './pantalla1';
+import Pantalla1 from '../container/inicioContainer';
 import Pantalla2 from './pantalla2';
 import Pantalla3 from './pantalla3';
 import PantallaInformacion from './pantalla-informacion'
@@ -18,7 +18,7 @@ import CustomDrawerContentComponent from './custom-drawer';
 
 const Pantalla1Navigator = createStackNavigator({
     inicio: {
-      screen: inicio,
+      screen: Pantalla1,
       navigationOptions: {
         title: 'Vamonos',
         headerStyle: {

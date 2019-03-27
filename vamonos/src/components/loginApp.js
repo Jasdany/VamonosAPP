@@ -23,6 +23,8 @@ const LoginApp = (props) => {
      <View style={styles.fon}>
          <Image style={styles.img} source={require('../image/log.png')}/>
         <View style={styles.fondo}>
+
+        <Text> Iniciar Sesion</Text>
             <View style = {styles.text}>
                 <TextInput
                     onChangeText={miOnChangeDeUSuario}
@@ -51,12 +53,14 @@ const LoginApp = (props) => {
                         onPress={miOnPressDeIniciarSesion}
                     />
                 </View>
-                <View style={styles.recuperacion}>
+                </View>
+
+            <View style={styles.recuperacion}>
                 <TouchableOpacity>
                     <Text> Crear Cuenta </Text> 
                 </TouchableOpacity>
             </View>
-            </View>
+            
            
         </View>
     </View>
@@ -75,7 +79,17 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
     },
-    
+    text:{//
+        marginTop: 15,
+        backgroundColor: 'transparent',
+        marginLeft: 10,
+        marginRight: 10,
+        borderColor: 'blue',
+        borderWidth: 1,
+        borderRadius: 50,
+        fontSize: 30,
+        height: 40
+    },//esto agrege
     img:{
         marginTop: -30,         /*esto es para el logo*/
         marginLeft: 70,       
