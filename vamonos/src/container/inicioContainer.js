@@ -39,15 +39,15 @@ class InicioContainer extends Component
 
         const{Informacion}=this.state
 
-        firebase.firestore().collection('Atractivos_Turísticos').onSnapshot((snapshot) => {
+        firebase.firestore().collection('Centros').onSnapshot((snapshot) => {
             snapshot.docChanges.forEach((change) =>{
                 if(change.type==='added'){
     
                     Informacion.push({   /* se declaran los campos*/
                         key: change.doc.id,
-                        imagenUrl: change.doc.data().imagenUrl,
+                        imagen: change.doc.data().imagen,
                         Nombre: change.doc.data().Nombre,
-                        Numero_telefono: change.doc.data().Numero_telefono,
+                        Telefono: change.doc.data().Telefono,
                         Ubicacion:change.doc.data().Ubicacion,
                         sitio_web:change.doc.data().sitio_web,
                         Descripcion: change.doc.data().Descripcion,

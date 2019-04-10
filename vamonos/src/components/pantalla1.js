@@ -8,7 +8,6 @@ import{
     Image,
     TouchableOpacity,
 } from 'react-native'
-
 const Lista = (props) => {
     const { Informacion } = props
     return (
@@ -47,17 +46,18 @@ const ItemProducto = (props) => {
     return (
         <View key={item.key} style={styles.header}>
             <Image
-                source={{url: item.imagenUrl}}
+                source={{url: item.imagen}}
                 style={styles.headerImage}
                 width={150}
                 height={198}
             />
         
-            <Text style={styles.nombre}>{item.nombre}</Text>
-            <Text style={styles.Numero_telefono}>{item.Numero_telefono}</Text>
+            <Text style={styles.nombre}>{item.Nombre}</Text>
+            <Text style={styles.Numero_telefono}>{item.Telefono}</Text>
             <Text style={styles.Ubicacion}>{item.Ubicacion}</Text>
             <Text style={styles.sitio_web}>{item.sitio_web}</Text>
             <Text style={styles.Descripcion}>{item.Descripcion}</Text>
+
          </View>
     )
 

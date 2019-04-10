@@ -22,7 +22,7 @@ const Pantalla1Navigator = createStackNavigator({
       navigationOptions: {
         title: 'Vamonos',
         headerStyle: {
-          backgroundColor: '#193555',
+          backgroundColor: 'black',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -42,7 +42,7 @@ const Pantalla2Navigator = createStackNavigator({
       navigationOptions: {
         title: 'Favoritos',
         headerStyle: {
-          backgroundColor: '#193555',
+          backgroundColor: 'black',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -58,7 +58,7 @@ const Pantalla2Navigator = createStackNavigator({
           navigationOptions: {
             title: 'Mapa',
             headerStyle: {
-              backgroundColor: '#193555',
+              backgroundColor: 'black',
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -75,7 +75,7 @@ const PantallaInformacionNavigator = createStackNavigator({
     navigationOptions: {
       title: 'Atractivos',
       headerStyle: {
-        backgroundColor: '#193555',
+        backgroundColor: 'black',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
