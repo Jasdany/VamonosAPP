@@ -5,32 +5,65 @@ import{
     ScrollView,
     StyleSheet,
     FlatList,
+    RefreshControl,
     Image,
     TouchableOpacity,
+    Linking,
 } from 'react-native'
 
+import Icon from './icon';
+//import B from './busqueda'
+
 const Lista = (props) => {
-    const { Informacion } = props
+
+    const {
+        Informacion,
+        isRefresh,
+        onRefresh,
+        onPressItemProducto,
+    } = props
+
     return (
         <View>
-            <Text></Text>
+
             <FlatList
+                refreshControl={
+                    <RefreshControl
+                        refreshing={isRefresh}
+                        onRefresh={onRefresh}
+                    />
+                }
                 ListHeaderComponent={
                     () => {
                         return (
                             <View>
-                                
+                             
                             </View>
                         )
                     }
                 }
                 style={styles.listaProductos}
                 data={Informacion}
+                ItemSeparatorComponent={
+                    () => {
+                        return (
+                            <View
+                                style={{
+                                    flex: 1,
+                                    margin: 8,
+                                    borderWidth: 0.5,
+                                    borderColor: 'rgba(0,0,0,0.05)',
+                                }}
+                            />
+                        )
+                    }
+                }
                 renderItem={
                     ({item}) => {
                         return (
                             <ItemProducto
                                 item={item}
+                                onPressItemProducto={onPressItemProducto}
                             />
                         )
                     }
@@ -42,23 +75,66 @@ const Lista = (props) => {
 
 const ItemProducto = (props) => {
 
-    const { item, } = props
+    const { item, onPressItemProducto } = props
 
     return (
-        <View key={item.key} style={styles.header}>
-            <Image
-                source={{url: item.imagenUrl}}
-                style={styles.headerImage}
-                width={150}
-                height={198}
-            />
-        
-            <Text style={styles.nombre}>{item.nombre}</Text>
-            <Text style={styles.Numero_telefono}>{item.Numero_telefono}</Text>
-            <Text style={styles.Ubicacion}>{item.Ubicacion}</Text>
-            <Text style={styles.sitio_web}>{item.sitio_web}</Text>
-            <Text style={styles.Descripcion}>{item.Descripcion}</Text>
-         </View>
+        <TouchableOpacity onPress={() => { onPressItemProducto(item) }}>
+            <View key={item.key} style={styles.item}>
+                <View style={styles.containerImage}>
+                    <Image
+                        source={{uri: item.imagen}}
+                        style={styles.image}
+                    />
+                </View>
+                <View style={styles.containerContent}>
+                    <View style={styles.containerText}>
+                        <Text style={styles.nombre}>{item.Nombre}</Text>
+                        <Text style={styles.ubicacion}>{item.Ubicacion}</Text>
+                        
+                    </View>
+                    <View style={styles.containerBoton}>
+                        <TouchableOpacity style={styles.containerBotonMostrar}>
+                            <View 
+                                style={{
+                                    ...styles.boton,
+                                    ...styles.botonMostrar,
+                                }}
+                            >
+                                <Icon
+                                    name={'arrow-expand'}
+                                />
+                                <Text>Mostrar</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <View
+                            style={{
+                                width: 6,
+                            }}
+                        />
+                        <TouchableOpacity
+                            style={styles.containerBotonLlamar}
+                            onPress={
+                                () => {
+                                    Linking.openURL(`tel:${item.Telefono}`)
+                                }
+                            }
+                        >
+                            <View
+                                style={{
+                                    ...styles.boton,
+                                    ...styles.botonLlamar,
+                                }}
+                            >
+                                <Icon
+                                    name={'phone-in-talk'}
+                                />
+                                <Text>Llamar</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </View>
+        </TouchableOpacity>
     )
 
 }
@@ -69,87 +145,60 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
-
-header: {
-    backgroundColor:'#E5E8E8' ,
-    marginTop: 0,
-    marginLeft: 0,
-    width: 370,
-    height: 200,
-    borderWidth:1
-},
-headerImage: {
-    backgroundColor: 'white',
-    width: '100%',
-    height: 150,
-    marginTop:0
-
-},
-nombre:{
-    color:'black',
-    marginLeft:150,
-    marginRight: 0,
-    marginTop:-100,
-    fontSize: 20,
-    fontFamily: 'Fontastique',
-    fontWeight: 'bold',
-    fontStyle: 'italic'
-    
-},
-Numero_telefono:{
-    color:'black',
-    marginLeft:150,
-    marginRight:0,
-    fontSize: 16,
-    marginTop:5,
-},
-Ubicacion:{
-    color:'black',
-    marginLeft: 150,
-    marginRight: 0,
-    margin :100,
-    fontSize: 15,
-    fontWeight: 'bold',
-    marginTop:5,
-    
-},
-
-sitio_web:{
-    color:'black',
-    marginLeft: 150,
-    marginRight: 0,
-    margin :100,
-    fontSize: 15,
-    fontWeight: 'bold',
-    marginTop:5,
-    
-},
-
-Descripcion:{
-    color:'black',
-    marginLeft: 150,
-    marginRight: 0,
-    margin :100,
-    fontSize: 15,
-    fontWeight: 'bold',
-    marginTop:5,
-    
-},
-text3:{
-    color:'black',
-    backgroundColor: '#0000CC',
-    marginLeft: 0,
-    marginRight: 0,
-    fontSize: 20,
-    marginTop:10,
-},
-
-fondo: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
-},
+    item: {
+        flexDirection: 'row',
+        flex: 1,
+        margin: 6,
+    },
+    image: {
+        width: 115,
+        height: 115,
+        resizeMode: 'cover',
+        borderRadius: 12,
+        backgroundColor: '#ccc',
+    },
+    nombre: {
+        color: '#263238',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    containerContent: {
+        flex: 1,
+        marginLeft: 6,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+    },
+    containerText: {
+        flex: 1,
+    },
+    containerBoton: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    boton: {
+        padding: 12,
+        borderRadius: 24,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 0.5,
+        flexDirection: 'row',
+    },
+    containerBotonMostrar: {
+        flex: 1,
+    },
+    botonMostrar: {
+        color: '#fff',
+        backgroundColor: 'rgba(33,150,243,0.05)',
+        borderColor: '#2196f3',
+    },
+    containerBotonLlamar: {
+        flex: 1,
+    },
+    botonLlamar: {
+        color: '#fff',
+        backgroundColor: 'rgba(244,67,54,0.05)',
+        borderColor: '#f44336',
+    },
 });
-
 
 export default Lista;

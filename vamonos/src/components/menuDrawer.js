@@ -14,6 +14,7 @@ import {
 } from 'react-native'
 
 import CustomDrawerContentComponent from './custom-drawer';
+import DetalleServicio from './../container/detalle-servicio-container';
 
 
 const Pantalla1Navigator = createStackNavigator({
@@ -21,6 +22,19 @@ const Pantalla1Navigator = createStackNavigator({
       screen: Pantalla1,
       navigationOptions: {
         title: 'Vamonos',
+        headerStyle: {
+          backgroundColor: '#193555',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      },
+    },
+    detalleServicio: {
+      screen: DetalleServicio,
+      navigationOptions: {
+        title: 'Detalle Servicio',
         headerStyle: {
           backgroundColor: '#193555',
         },
@@ -114,8 +128,8 @@ export default TestMenuDrawer = createDrawerNavigator({
     PantallaInformacion: {
       screen: PantallaInformacionNavigator,
       navigationOptions: {
-        drawerLabel: 'Atractivos',
-        drawerIcon: <Image source={require('../image/safari.png')} style={{resizeMode: 'cover', width: 24, height: 24,}} />,
+        drawerLabel: 'Quienes Somos',
+        drawerIcon: <Image source={require('../image/question.png')} style={{resizeMode: 'cover', width: 24, height: 24,}} />,
       },
     },
 },{

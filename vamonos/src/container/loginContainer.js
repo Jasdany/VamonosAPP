@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {
     Alert,
-} from 'react-native'
+} from 'react-native';
 import LoginApp from '../components/loginApp';
 import MenuDrawer from '../components/menuDrawer';
+//import crearC from '../components/crearCuenta';
 
 class LoginContainer extends Component {
 
@@ -29,15 +30,21 @@ class LoginContainer extends Component {
 
     miEventoDeBotonIniciarSession = () => {
         const { usuario, pass } = this.state;
-        if(usuario === "0" && pass === "0") {
+        if(usuario === "" && pass === "") {
             this.setState({
                 logged: true,
             });
         }
         else {
-            Alert.alert("INICIO ERRONEO", "Usuario o contraseña incorrecto");
+            Alert.alert("Fallo!", "Usuario o contraseña incorrecto");
         }
     }
+
+    miEventoDeBotonCrearCuenta=()=>{
+
+
+
+    }//cuenta nueva
 
     isLogged = () => {
 

@@ -1,5 +1,10 @@
 import React from 'react'
-import Informacion from './informacion'
+import{
+    text,
+    title,
+    styles,
+    style
+} from 'react-native'
 
 const PantallaInformacion = (props) => {
 
@@ -11,6 +16,9 @@ const PantallaInformacion = (props) => {
             apellidos='prueba'
         />
     )
+    
+     
+        
 
 }
 

@@ -23,8 +23,9 @@ const LoginApp = (props) => {
      <View style={styles.fon}>
          <Image style={styles.img} source={require('../image/log.png')}/>
         <View style={styles.fondo}>
-
-        <Text> Iniciar Sesion</Text>
+           
+              <Text style={styles.title}> Iniciar Sesion</Text>
+              
             <View style = {styles.text}>
                 <TextInput
                     onChangeText={miOnChangeDeUSuario}
@@ -79,17 +80,17 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
     },
-    text:{//
-        marginTop: 15,
-        backgroundColor: 'transparent',
-        marginLeft: 10,
-        marginRight: 10,
-        borderColor: 'blue',
-        borderWidth: 1,
-        borderRadius: 50,
-        fontSize: 30,
-        height: 40
-    },//esto agrege
+
+    title:{
+        color: 'black',
+        marginTop:30,
+        marginRight:5,
+        fontSize:20
+
+
+
+    },
+    
     img:{
         marginTop: -30,         /*esto es para el logo*/
         marginLeft: 70,       
@@ -130,20 +131,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         height: 40
     },
-    text1:{
-        fontSize: 20,
-        marginLeft: 75,
-        marginRight: 75,
-        color: 'black',
-        marginTop: 0,
-    },
-    text2:{
-        fontSize: 20,
-        marginLeft: 60,
-        marginRight: 60,
-        color: 'black',
-        marginTop: 15,
-    }
+  
 })
 
 export default LoginApp;
