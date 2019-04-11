@@ -12,7 +12,6 @@ import{
 } from 'react-native'
 
 import Icon from './icon';
-//import B from './busqueda'
 
 const Lista = (props) => {
 

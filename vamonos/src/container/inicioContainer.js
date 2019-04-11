@@ -50,6 +50,20 @@ class InicioContainer extends Component
     getInformacion = () => {
 
         const db = firebase.firestore();
+        firebase.firestore().collection('Centros').onSnapshot((snapshot) => {
+            snapshot.docChanges.forEach((change) =>{
+                if(change.type==='added'){
+    
+                    Informacion.push({   /* se declaran los campos*/
+                        key: change.doc.id,
+                        imagen: change.doc.data().imagen,
+                        Nombre: change.doc.data().Nombre,
+                        Telefono: change.doc.data().Telefono,
+                        Ubicacion:change.doc.data().Ubicacion,
+                        sitio_web:change.doc.data().sitio_web,
+                        Descripcion: change.doc.data().Descripcion,
+    
+                    })
 
         db.collection('Centros').onSnapshot((instantanea) => {
             this.setState({
@@ -103,4 +117,4 @@ class InicioContainer extends Component
 
 }
 
-export default InicioContainer
+export default InicioContainer;

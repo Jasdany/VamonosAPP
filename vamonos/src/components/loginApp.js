@@ -26,6 +26,10 @@ const LoginApp = (props) => {
            
               <Text style={styles.title}> Iniciar Sesion</Text>
               
+    
+
+             <Text style={styles.title}> Iniciar Sesion </Text>
+
             <View style = {styles.text}>
                 <TextInput
                     onChangeText={miOnChangeDeUSuario}
@@ -50,7 +54,7 @@ const LoginApp = (props) => {
                 <View style = {styles.margin}>
                     <Button
                         title={'Iniciar Sesion'}
-                        color='blue'
+                        color='black'
                         onPress={miOnPressDeIniciarSesion}
                     />
                 </View>
@@ -70,7 +74,7 @@ const LoginApp = (props) => {
 
 const styles = StyleSheet.create({
     recuperacion:{
-        marginTop: 15,
+        marginTop: 20,
         flexDirection: 'row',
         justifyContent: 'space-around',
         fontSize: 20
@@ -79,6 +83,8 @@ const styles = StyleSheet.create({
     row:{
         flexDirection: 'row',
         justifyContent: 'space-around',
+        marginTop:15,
+        color:'black'
     },
 
     title:{
@@ -91,8 +97,16 @@ const styles = StyleSheet.create({
 
     },
     
+   title:{
+       marginTop:30,
+       fontSize:20,
+       marginLeft: 25,
+       color: 'black'
+
+   },
+
     img:{
-        marginTop: -30,         /*esto es para el logo*/
+        marginTop: -100,         /*esto es para el logo*/
         marginLeft: 70,       
         marginRight: 10,  
         borderRadius: 15
@@ -125,13 +139,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         marginLeft: 10,
         marginRight: 10,
-        borderColor: 'blue',
+        borderColor: 'black',
         borderWidth: 1,
         borderRadius: 50,
         fontSize: 30,
         height: 40
-    },
-  
+    }
+ 
 })
 
 export default LoginApp;
