@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import LoginApp from '../components/loginApp';
 import MenuDrawer from '../components/menuDrawer';
-//import crearC from '../components/crearCuenta';
+
 
 class LoginContainer extends Component {
 

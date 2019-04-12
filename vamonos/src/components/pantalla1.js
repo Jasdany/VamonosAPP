@@ -9,6 +9,7 @@ import{
     Image,
     TouchableOpacity,
     Linking,
+    TextInput,
 } from 'react-native'
 
 import Icon from './icon';
@@ -20,11 +21,17 @@ const Lista = (props) => {
         isRefresh,
         onRefresh,
         onPressItemProducto,
+        onChangeTextBuscar,
+        textoBuscar,
     } = props
 
     return (
         <View>
-
+            <TextInput
+                onChangeText={onChangeTextBuscar}
+                defaultValue={textoBuscar}
+                placeholder={'Buscar...'}
+            />
             <FlatList
                 refreshControl={
                     <RefreshControl

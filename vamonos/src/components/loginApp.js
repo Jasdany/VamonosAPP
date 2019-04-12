@@ -24,10 +24,6 @@ const LoginApp = (props) => {
          <Image style={styles.img} source={require('../image/log.png')}/>
         <View style={styles.fondo}>
            
-              <Text style={styles.title}> Iniciar Sesion</Text>
-              
-    
-
              <Text style={styles.title}> Iniciar Sesion </Text>
 
             <View style = {styles.text}>
@@ -54,7 +50,7 @@ const LoginApp = (props) => {
                 <View style = {styles.margin}>
                     <Button
                         title={'Iniciar Sesion'}
-                        color='black'
+                        color='blue'
                         onPress={miOnPressDeIniciarSesion}
                     />
                 </View>
@@ -85,16 +81,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginTop:15,
         color:'black'
-    },
-
-    title:{
-        color: 'black',
-        marginTop:30,
-        marginRight:5,
-        fontSize:20
-
-
-
     },
     
    title:{
@@ -139,7 +125,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         marginLeft: 10,
         marginRight: 10,
-        borderColor: 'black',
+        borderColor: 'blue',
         borderWidth: 1,
         borderRadius: 50,
         fontSize: 30,

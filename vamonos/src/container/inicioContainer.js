@@ -13,6 +13,7 @@ class InicioContainer extends Component
         this.state = {
             datos:[],
             isRefresh: false,
+            textoBuscar: '',
         }
     }
 
@@ -26,16 +27,31 @@ class InicioContainer extends Component
         const {
             datos,
             isRefresh,
+            textoBuscar,
         } = this.state;
         console.log ("render",datos)
         return (
             <Pantalla1
-                Informacion={datos}
+                Informacion={this.filtrarDatos(textoBuscar, datos)}
                 isRefresh={isRefresh}
                 onRefresh={this.handleRefresh}
                 onPressItemProducto={this.handlePressItemProducto}
+                textoBuscar={textoBuscar}
+                onChangeTextBuscar={this.handleChangeTextBuscar}
             />
         )
+    }
+
+    filtrarDatos = (texto, arreglo) => {
+        return arreglo.filter(item => {
+            return item.Nombre ? item.Nombre.indexOf(texto) > -1 : false;
+        })
+    }
+
+    handleChangeTextBuscar = (texto) => {
+        this.setState({
+            textoBuscar: texto,
+        })
     }
 
     handleRefresh = () => {
@@ -47,23 +63,13 @@ class InicioContainer extends Component
         this.getInformacion()
     }
 
+
+
+
     getInformacion = () => {
 
         const db = firebase.firestore();
-        firebase.firestore().collection('Centros').onSnapshot((snapshot) => {
-            snapshot.docChanges.forEach((change) =>{
-                if(change.type==='added'){
-    
-                    Informacion.push({   /* se declaran los campos*/
-                        key: change.doc.id,
-                        imagen: change.doc.data().imagen,
-                        Nombre: change.doc.data().Nombre,
-                        Telefono: change.doc.data().Telefono,
-                        Ubicacion:change.doc.data().Ubicacion,
-                        sitio_web:change.doc.data().sitio_web,
-                        Descripcion: change.doc.data().Descripcion,
-    
-                    })
+                
 
         db.collection('Centros').onSnapshot((instantanea) => {
             this.setState({
@@ -114,6 +120,8 @@ class InicioContainer extends Component
         });
 
     }
+
+    
 
 }
 
